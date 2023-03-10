@@ -1,2 +1,2 @@
 #!/bin/bash
-chomd -R a+X 
+chomd a+X * 
