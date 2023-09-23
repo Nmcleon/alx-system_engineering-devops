@@ -12,26 +12,18 @@ This repository contains the completion of the CMD CHALLENGE project, showcasing
 - [Screenshots](#screenshots)
 - [Instructions](#instructions)
 - [SFTP File Transfer](#sftp-file-transfer)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
-The CMD CHALLENGE project is an optional exercise aimed at improving command line skills by completing a series of tasks using Bash commands. The tasks become progressively complex, providing an opportunity to demonstrate command line proficiency.
+CMD CHALLENGE is a pretty cool game challenging you on Bash skills. Everything is done via the command line and the questions are becoming increasingly complicated. It’s a good training to improve your command line skills!
 
 ## Task Completion
-
-This project includes the completion of the following three parts of the CMD CHALLENGE:
 
 - Part 0: First 九 tasks (Tasks 0-8)
 - Part 1: Reach חי completed tasks (Tasks 9-17)
 - Part 2: Reach the perfect cube, 27 (Tasks 18-26)
 
-Each task within these parts has been successfully completed.
-
 ## Screenshots
-
-To provide evidence of task completion, screenshots have been taken for each task. You can find the screenshots in the following files:
 
 - [0-first_9_tasks.png](screenshots/0-first_9_tasks.png)
 - [1-next_9_tasks.png](screenshots/1-next_9_tasks.png)
@@ -68,23 +60,3 @@ To transfer the screenshots to the sandbox environment, follow these steps:
 5. Confirm that the screenshots have been successfully transferred by checking the sandbox directory.
 
 6. After successful transfer, proceed to add, commit, and push the screenshots to this GitHub repository.
-
-## Contributing
-
-Contributions to this project are not required, as it is an individual exercise. However, feedback and suggestions are welcome through GitHub issues.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-
-0. First 九 tasks
-Complete the first 9 tasks.
-- File: 0-first_9_tasks.jpg,0-first_9_tasks.png
- 
-1. Reach חי completed tasks
-- File: 1-next_9_tasks.jpg,1-next_9_tasks.png
- 
-2. Reach the perfect cube, 27
-- File: 2-next_9_tasks.jpg,2-next_9_tasks.png
- 
