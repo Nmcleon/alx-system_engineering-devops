@@ -51,11 +51,11 @@ To transfer the screenshots to the sandbox environment, follow these steps:
 
 1. Open a terminal or command prompt on your local machine.
 
-2. Use the SFTP command-line tool to connect to the sandbox environment with the provided hostname, username, and password.
+2. Use the SFTP command-line tool to connect to the sandbox environment with the provided hostname, username (i.e `sftp username@hostname`) and password.
 
 3. Navigate to the directory where you want to upload the screenshots on the sandbox (e.g., `/root/alx-system_engineering-devops/command_line_for_the_win/`).
 
-4. Use the `put` command to upload each screenshot from your local machine to the sandbox directory.
+4. Use the `put` command to upload each screenshot from your local machine to the sandbox directory. ( `put 0-first_9_tasks.png`)
 
 5. Confirm that the screenshots have been successfully transferred by checking the sandbox directory.
 
