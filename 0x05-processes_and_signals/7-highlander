@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # An invisible infinity loop 
-trap 'To infinity and beyond"' SIGTERM
-i=0
-while [ $i ]; do
-	echo 'I am invincible!!!'
-	sleep 2
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "I am invincible!!!"' SIGTERM 
 done
