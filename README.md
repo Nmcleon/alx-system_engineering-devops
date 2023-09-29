@@ -5,3 +5,5 @@
 - 0x03-shell_variables_expansions
 - command_line_for_the _win
 - 0x04-loops_conditions_and_parsing
+- 0x05-processes_and_signals
+- 
