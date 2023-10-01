@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# process to practice process management
+count=0
+while [ $count ]; do
+      echo 'I am alive!' >> /tmp/my_process
+      sleep 2
+done
