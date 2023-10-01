@@ -25,16 +25,20 @@ int main(void)
 {
 	int count = 0, pid = 0;
 
-	for (; count < 5; count++)
+	while (i)
 	{
 		pid = fork();
-		if (pid < 0)
-			continue;
-		else if (pid == 0)
-			exit(0);
-		else
+		if (pid > 0)
+		{
 			printf("Zombie process created, PID: %d\n", pid);
+			sleep(1);
+			i--;
+		}
+		else
+			exit(0);
 	}
+
 	infinite_while();
+
 	return (0);
 }
