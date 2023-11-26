@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 # Puppet Manifest making changse in config file
 
-file { 'etc/ssh/ssh_config':
-	ensure => present,
+file_line { 'passwd auth':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+  replace => true,
+}
 
-content =>"
-	#SSH CLIENT CONFIGURATION
-	host*
-	IdentifyFile ~/.ssh/school
-	PasswordAuthentification no
-	",
+file_line { 'identity file':
+  ensure => present,
+  path   => '/etc/ssh/ssh_config',
+  line   => '     IdentityFile ~/.ssh/school',
+  replace => true,
 }
