@@ -10,7 +10,7 @@ fi
 # location to file
 path_to_file$1
 ip=$2
-username=$4
+username=$3
 path_ssh_key=$4
 
 # host key cheking
@@ -20,7 +20,7 @@ scp -o "StrictHostKeyChecking=no" -i "$path_to_ssh_key" "$path_to_file" "$userna
 # if sucessful
 if [ $? -eq 0 ]
 then
-	echo "SUCCESS"
+ echo "SUCCESS"
 else
-	echo "FAIL"
+ echo "FAIL"
 fi
