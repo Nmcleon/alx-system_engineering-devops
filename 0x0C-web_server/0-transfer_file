@@ -16,11 +16,3 @@ path_ssh_key=$4
 # host key cheking
 
 scp -o "StrictHostKeyChecking=no" -i "$path_to_ssh_key" "$path_to_file" "$username@$ip:~/"
-
-# if sucessful
-if [ $? -eq 0 ]
-then
- echo "SUCCESS"
-else
- echo "FAIL"
-fi
