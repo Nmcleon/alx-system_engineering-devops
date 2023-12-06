@@ -1,3 +1,4 @@
+# Add a custom HTTP header with Puppet
 # Installs a Nginx server with custome HTTP header
 
 exec {'update':
