@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Shows information about subdomains.
+# Configure my domain zone:
 
 domain_information() {
     local domain="$1"
