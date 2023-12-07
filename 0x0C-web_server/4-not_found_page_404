@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# 404 (PAGE NOT FOUND)
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Create index.html
+echo "Hello World!" | sudo tee /var/www.html/index.html
+
+#Redirections 
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/nmcleon permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+#404 ERR PAGE
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+
+#insert to file
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+#test err
+sudo nginx -t
+
+# Restarting Nginx
+sudo service nginx restart
