@@ -16,7 +16,8 @@ Explaining the sequence of events when "https://www.google.com" is entered in a 
 Ensure your blog post comprehensively covers these components and their roles in this process.
 
 ### URLs
-
+- https://medium.com/@nmcleon10/what-happens-when-you-type-https-www-google-com-and-press-enter-a6dea4d3fe0c
+- 
 ### Submission Details
 - Publish your blog post on Medium or LinkedIn in English.
 - Share the blog post URL in your answer file.
