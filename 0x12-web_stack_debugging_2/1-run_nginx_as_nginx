@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Run Nginx as Nginx user from ROOT
+
+# set user in nginx config
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+# change port 80 to 8080 in sites-available config
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+# give owner permissions to read and write
+chmod 644 /etc/nginx/nginx.conf
+# kill apach2 incase its running to prevent interuptions
+pkill apache2
+# start the nginx service with new nginx user
+sudo -u nginx service nginx start
