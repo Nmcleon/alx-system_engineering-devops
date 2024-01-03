@@ -23,3 +23,4 @@
 - 0x13-firewall
 - 0x14-mysql
 - 0x15-api
+- 0x14-javascript-web_scraping
