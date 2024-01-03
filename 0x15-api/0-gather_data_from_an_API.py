@@ -20,7 +20,7 @@ if __name__ == "__main__":
     employee_name = sessionReq.get(url_name)
 
     json_request = employee.json()
-    name = employee_name.json()['name']
+    user = employee_name.json()['user']
 
     totalTasks = 0
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
             totalTasks += 1
 
     print("Employee {} is done with tasks({}/{}):".
-          format(name, totalTasks, len(json_request)))
+          format(user, totalTasks, len(json_request)))
 
     for completed_tasks in json_request:
         if completed_tasks['completed']:
