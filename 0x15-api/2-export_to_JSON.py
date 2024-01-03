@@ -1,6 +1,8 @@
-#!/usr/bin/python3
+#!/user/bin/python3
 """
-A script that fetches an employee's TODO list progress using a REST API
+A sript that, uses a REST API, for a given employee ID, returns
+information about his/her TODO list progress
+and exports data in the JSON format.
 """
 
 import json
@@ -10,30 +12,30 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    sessionReq = requests.Session()
+    session_request = requests.Session()
 
-    employee_id = argv[1]
-    base_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
-    url_name  = 'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
+    emp_id = argv[1]
+    baseurl = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(emp_id)
+    urlName = 'https://jsonplaceholder.typicode.com/users/{}'.format(emp_id)
 
-    employee = sessionReq.get(base_url)
-    employee_name = sessionReq.get(url_name)
+    employee = session_request.get(baseurl)
+    employee_name = session_request.get(urlName)
 
     json_request = employee.json()
-    user = employee_name.json()['user']
+    user = employee_name.json()['username']
 
-    totalTasks = []
+    total = []
     user_update = {}
 
-    for completed_tasks in json_request:
-        totalTask.append(
+    for all_Emp in json_request:
+        total.append(
             {
-                "task": completed_tasks.get('title'),
-                "completed": completed_tasks.get('completed'),
+                "task": all_Emp.get('title'),
+                "completed": all_Emp.get('completed'),
                 "username": user,
             })
-        user_update[employee_id] = totalTasks
+    user_update[emp_id] = total
 
-        file_Json = employee_id + ".json"
-        with open(file_Json, 'w') as f:
-            json.dump(user_update, f)
+    file_Json = emp_id + ".json"
+    with open(file_Json, 'w') as f:
+        json.dump(user_update, f)
