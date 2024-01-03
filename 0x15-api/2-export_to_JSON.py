@@ -20,7 +20,7 @@ if __name__ == "__main__":
     employee_name = session_request.get(urlName)
 
     json_request = employee.json()
-    usr = employee_name.json()['username']
+    usr = employee_name.json()[0]['username']
 
     total = []
     user_update = []
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 "completed": all_Emp.get('completed'),
                 "username": usr,
             })
-    user_update[empid] = total
+    user_update.extend(total)
 
     file_Json = empid + ".json"
     with open(file_Json, 'w') as f:
