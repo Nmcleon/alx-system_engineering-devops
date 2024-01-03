@@ -20,10 +20,10 @@ if __name__ == "__main__":
     employee_name = session_request.get(urlName)
 
     json_request = employee.json()
-    usr = employee_name.json()['username']
+    usr = employee_name.jsoni()['username']
 
     total = []
-    user_update = {}
+    user_update = []
 
     for all_Emp in json_request:
         total.append(
