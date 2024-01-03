@@ -32,7 +32,7 @@ def get_employee_todo_progress(employee_id):
                 f"is done with tasks({num_completed_tasks}/{total_tasks}):"
                 )
         for task in completed_tasks:
-            print("\t" + done_tasks.get('title'))
+            print("\t" + comleted_tasks.get('title'))
 
     except requests.RequestException as e:
         print(f"Error: {e}")
