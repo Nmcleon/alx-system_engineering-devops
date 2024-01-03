@@ -12,11 +12,11 @@ if __name__ == "__main__":
 
     session_request = requests.Session()
 
-    emp_id = argv[1]
-    baseurl = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(emp_id)
-    urlName = 'https://jsonplaceholder.typicode.com/users/{}'.format(emp_id)
+    empid = argv[1]
+    base = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(empid)
+    urlName = 'https://jsonplaceholder.typicode.com/users/{}'.format(empid)
 
-    employee = session_request.get(baseURL)
+    employee = session_request.get(base)
     employee_name = session_request.get(urlName)
 
     json_request = employee.json()
