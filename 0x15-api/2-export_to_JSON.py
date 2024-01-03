@@ -20,7 +20,7 @@ if __name__ == "__main__":
     employee_name = session_request.get(urlName)
 
     json_request = employee.json()
-    usr = employee_name.jsoni()['username']
+    usr = employee_name.json()['username']
 
     total = []
     user_update = []
