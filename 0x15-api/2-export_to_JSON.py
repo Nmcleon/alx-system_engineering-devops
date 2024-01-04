@@ -1,39 +1,42 @@
 #!/usr/bin/python3
+"""Export data from an API to JSON format.
 """
-A script that fetches an employee's TODO list progress using a REST API
-"""
-
-import json
+from json import dumps
 import requests
 from sys import argv
 
+if __name__ == '__main__':
+    # Checks if the argument can be converted to a number
+    try:
+        emp_id = int(argv[1])
+    except ValueError:
+        exit()
 
-if __name__ == "__main__":
+    # Main formatted names to API uris and filenames
+    api_url = 'https://jsonplaceholder.typicode.com'
+    user_uri = '{api}/users/{id}'.format(api=api_url, id=emp_id)
+    todo_uri = '{user_uri}/todos'.format(user_uri=user_uri)
+    filename = '{emp_id}.json'.format(emp_id=emp_id)
 
-    session_request = requests.Session()
+    # User Response
+    u_res = requests.get(user_uri).json()
 
-    empid = argv[1]
-    base = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(empid)
-    urlName = 'https://jsonplaceholder.typicode.com/users/{}'.format(empid)
+    # User TODO Response
+    t_res = requests.get(todo_uri).json()
 
-    employee = session_request.get(base)
-    employee_name = session_request.get(urlName)
+    # A list of all tasks of an user
+    user_tasks = list()
 
-    json_request = employee.json()
-    usr = employee_name.json()['username']
+    for elem in t_res:
+        data = {
+            'task': elem.get('title'),
+            'completed': elem.get('completed'),
+            'username': u_res.get('username')
+        }
 
-    total = []
-    user_update = {}
+        user_tasks.append(data)
 
-    for all_Emp in json_request:
-        total.append(
-            {
-                "task": all_Emp.get('title'),
-                "completed": all_Emp.get('completed'),
-                "username": usr,
-            })
-    user_update[empid] = total
-
-    file_Json = empid + ".json"
-    with open(file_Json, 'w') as f:
-        json.dump(user_update, f)
+    # Create the new file for the user to save the information
+    # Filename example: `{user_id}.json`
+    with open(filename, 'w', encoding='utf-8') as jsonfile:
+        jsonfile.write(dumps({emp_id: user_tasks}))
