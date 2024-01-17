@@ -25,3 +25,4 @@
 - 0x15-api
 - 0x14-javascript-web_scraping
 - 0x16-api_advanced
+- 0x18-webstack_monitoring
