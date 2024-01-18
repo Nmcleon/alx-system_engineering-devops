@@ -1,12 +1,12 @@
 **Postmortem: The Great Apache Tango Unveiled**
 
-*Written by Noah Kiaye, The Debugging Virtuoso*
+*Written by Noah Kiaye, The Debugging Virtuoso* 🕵️‍♂️💻
 
 ---
 
 ![Dancing Apache](https://example.com/dancing_apache.gif)
 
-*Once upon a time, in the enchanted land of servers, our Apache was doing an unexpected tango - the 500 Internal Server Error dance. Cue the dramatic music!*
+*Once upon a time, in the enchanted land of servers, our Apache was doing an unexpected tango - the 500 Internal Server Error dance. Cue the dramatic music!* 🎶💃🎭
 
 **The Dance of Despair:**
 
@@ -39,7 +39,7 @@ Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` 
 - No need for a cavalry; Noah, our server maestro, handled the situation solo.
 
 *Resolution:*
-- In a twist of fate, a Puppet manifesto (`0-strace_is_your_friend.pp`) was conjured to magically correct the misstep in the `wp-settings.php` file.
+- In a twist of fate, a Puppet manifesto (`0-strace_is_your_friend.pp`) was conjured to magically correct the misstep in the `wp-settings.php` file. 🪄✨
 
 ---
 
@@ -56,12 +56,12 @@ Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` 
 **Behind the Scenes:**
 
 *Improvements/Fixes:*
-- Noah vowed to install regular file integrity checks, ensuring no more surprise dance partners.
+- Noah vowed to install regular file integrity checks, ensuring no more surprise dance partners. 🕵️‍♂️🕵️‍♀️
 
 *Tasks to Address the Issue:*
 1. Implement automated file integrity checks - no more rogue dancers.
 2. Conduct periodic Apache log reviews for early detection of server melodramas.
-3. Elevate the Puppet manifesto repertoire to tackle common misconfigurations.
+3. Elevate the Puppet manifesto repertoire to tackle common misconfigurations. 🎭🎩
 
 ---
 
