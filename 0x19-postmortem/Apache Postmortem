@@ -4,7 +4,6 @@
 
 ---
 
-![Dancing Apache](https://example.com/dancing_apache.gif)
 
 *Once upon a time, in the enchanted land of servers, our Apache was doing an unexpected tango - the 500 Internal Server Error dance. Cue the dramatic music!* 🎶💃🎭
 
@@ -17,9 +16,9 @@ The Apache dance-off began and persisted for what felt like an eternity. Dancers
 Amidst the server chaos, users were left in bewilderment, wondering if Apache had decided to pursue a career in interpretative dance.
 
 *The Root Cause Reveal:*
-Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` sword. With a tmux setup that would make even the Matrix jealous, he uncovered the culprit - a misplaced "phpp" in the `wp-settings.php` file. Talk about a syntax error doing the cha-cha!
+Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` sword. With a tmux setup that would make even the Matrix jealous, he uncovered the culprit - 
+a misplaced "phpp" in the `wp-settings.php` file. Talk about a syntax error doing the cha-cha!
 
----
 
 **Timeline:**
 
@@ -41,7 +40,6 @@ Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` 
 *Resolution:*
 - In a twist of fate, a Puppet manifesto (`0-strace_is_your_friend.pp`) was conjured to magically correct the misstep in the `wp-settings.php` file. 🪄✨
 
----
 
 **The Grand Finale:**
 
@@ -51,7 +49,6 @@ Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` 
 *Resolution Details:*
 - The crowd erupted in cheers as Puppet, the magical automation wizard, cast a spell to replace "phpp" with "php," restoring harmony.
 
----
 
 **Behind the Scenes:**
 
@@ -65,4 +62,5 @@ Our hero, Noah Kiaye, donned his debugging cape, armed with the mighty `strace` 
 
 ---
 
-In conclusion, the Great Apache Tango met its match in Noah Kiaye, the Debugging Virtuoso. The audience left with a lesson in server theatrics and a newfound appreciation for Puppet magic. As the curtain falls, our hero strides into the sunset, ready for the next server saga. Applause, applause! 👏🎭
+In conclusion, the Great Apache Tango met its match in Noah Kiaye, the Debugging Virtuoso. The audience left with a lesson in server theatrics and a newfound appreciation for Puppet magic.
+As the curtain falls, our hero strides into the sunset, ready for the next server saga. Applause, applause! 👏🎭
