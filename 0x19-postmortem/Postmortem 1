@@ -62,4 +62,6 @@ The root cause of the issue was identified using `strace` and traced to a miscon
 
 ---
 
-In conclusion, the Apache 500 Internal Server Error issue was successfully resolved by identifying and correcting a misconfiguration in the `wp-settings.php` file. The use of `strace` and Puppet automation ensured a swift and effective resolution. To prevent similar issues in the future, measures have been outlined to enhance proactive monitoring and automate the correction of common misconfigurations.
+In conclusion, the Apache 500 Internal Server Error issue was successfully resolved by identifying and correcting a misconfiguration in the `wp-settings.php` file.
+The use of `strace` and Puppet automation ensured a swift and effective resolution. To prevent similar issues in the future, measures have been outlined to enhance proactive monitoring 
+and automate the correction of common misconfigurations.
