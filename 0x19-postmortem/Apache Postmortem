@@ -2,8 +2,6 @@
 
 *Written by Noah Kiaye, The Debugging Virtuoso* 🕵️‍♂️💻
 
----
-
 
 *Once upon a time, in the enchanted land of servers, our Apache was doing an unexpected tango - the 500 Internal Server Error dance. Cue the dramatic music!* 🎶💃🎭
 
@@ -60,7 +58,6 @@ a misplaced "phpp" in the `wp-settings.php` file. Talk about a syntax error doin
 2. Conduct periodic Apache log reviews for early detection of server melodramas.
 3. Elevate the Puppet manifesto repertoire to tackle common misconfigurations. 🎭🎩
 
----
 
 In conclusion, the Great Apache Tango met its match in Noah Kiaye, the Debugging Virtuoso. The audience left with a lesson in server theatrics and a newfound appreciation for Puppet magic.
 As the curtain falls, our hero strides into the sunset, ready for the next server saga. Applause, applause! 👏🎭
