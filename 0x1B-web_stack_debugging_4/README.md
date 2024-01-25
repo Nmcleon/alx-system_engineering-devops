@@ -17,7 +17,7 @@ The initial ulimit setting was insufficient to handle the concurrency level and 
 - **0.353 seconds:** Initial benchmarking using ApacheBench completed with 943 failed requests.
   
 - **Puppet Configuration (0-the_sky_is_the_limit_not.pp):**
-  - The ulimit settings were increased in the Nginx default configuration file (`/etc/default/nginx`) to a more appropriate value (4096).
+  - The ulimit settings was increased in the Nginx default configuration file (`/etc/default/nginx`) to a more appropriate value (4096).
   - Nginx was then restarted to apply the changes.
 
 - **0.301 seconds:** Subsequent benchmarking after applying the Puppet configuration resulted in zero failed requests, indicating a successful mitigation.
@@ -64,5 +64,5 @@ The number of failed requests dropped to zero, and the server demonstrated incre
 ## Conclusion
 
 The incident highlighted the importance of fine-tuning system parameters, such as ulimit settings, to ensure the web server can handle varying levels of traffic effectively.
-By promptly identifying and addressing the root cause, we were able to optimize the Nginx server and improve its performance under pressure.
+By promptly identifying and addressing the root cause, I was able to optimize the Nginx server and improve its performance under pressure.
 Ongoing monitoring and periodic reviews of server configurations will be essential to maintaining optimal performance as traffic patterns evolve.
