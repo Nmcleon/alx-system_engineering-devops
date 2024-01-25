@@ -1,6 +1,5 @@
 # 0x1B-web_stack_debugging_4
 
-```markdown
 # Postmortem: Enhancing Nginx Performance Under Load
 
 ## Incident Summary
@@ -42,7 +41,7 @@ file { 'fix-for-nginx':
   command => 'nginx restart',
   path    => '/etc/init.d/',
 }
-
+```
 ### 2. Verification
 Following the configuration change, a second round of benchmarking using ApacheBench showed a substantial improvement.
 The number of failed requests dropped to zero, and the server demonstrated increased performance, handling the load more efficiently.
@@ -67,4 +66,3 @@ The number of failed requests dropped to zero, and the server demonstrated incre
 The incident highlighted the importance of fine-tuning system parameters, such as ulimit settings, to ensure the web server can handle varying levels of traffic effectively.
 By promptly identifying and addressing the root cause, we were able to optimize the Nginx server and improve its performance under pressure.
 Ongoing monitoring and periodic reviews of server configurations will be essential to maintaining optimal performance as traffic patterns evolve.
-```
