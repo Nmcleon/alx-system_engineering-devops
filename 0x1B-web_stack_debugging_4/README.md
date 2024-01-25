@@ -15,7 +15,7 @@ The initial ulimit setting was insufficient to handle the concurrency level and 
 
 ## Incident Timeline
 
-- *0.353 seconds:* Initial benchmarking using ApacheBench completed with 943 failed requests.
+- **0.353 seconds:** Initial benchmarking using ApacheBench completed with 943 failed requests.
   
 - **Puppet Configuration (0-the_sky_is_the_limit_not.pp):**
   - The ulimit settings were increased in the Nginx default configuration file (`/etc/default/nginx`) to a more appropriate value (4096).
@@ -26,7 +26,8 @@ The initial ulimit setting was insufficient to handle the concurrency level and 
 ## Remediation Steps
 
 ### 1. Puppet Configuration
-The main remediation involved adjusting the ulimit settings for file descriptors in the Nginx default configuration file using Puppet. The configuration file was updated to increase the ulimit from the default value to 4096. Additionally, Nginx was restarted to apply the changes.
+The main remediation involved adjusting the ulimit settings for file descriptors in the Nginx default configuration file using Puppet.
+The configuration file was updated to increase the ulimit from the default value to 4096. Additionally, Nginx was restarted to apply the changes.
 
 ```puppet
 # Increase the ULIMIT of the default file
@@ -43,12 +44,13 @@ file { 'fix-for-nginx':
 }
 
 ### 2. Verification
-Following the configuration change, a second round of benchmarking using ApacheBench showed a substantial improvement. The number of failed requests dropped to zero, and the server demonstrated increased performance, handling the load more efficiently.
+Following the configuration change, a second round of benchmarking using ApacheBench showed a substantial improvement.
+The number of failed requests dropped to zero, and the server demonstrated increased performance, handling the load more efficiently.
 
 ## Lessons Learned
 
 1. **Regularly Review and Adjust Ulimits**
-   - Ulimits play a crucial role in determining system resource limits. Regularly review and adjust ulimit settings based on the expected load and concurrency levels.
+   - Ulimits play a crucial role in determining system resource limits.Regularly review and adjust ulimit settings based on the expected load and concurrency levels.
 
 2. **Effective Logging for Debugging**
    - Logs proved invaluable during the debugging process. Ensure thorough logging, especially during performance testing, to quickly identify and address issues.
@@ -57,9 +59,12 @@ Following the configuration change, a second round of benchmarking using ApacheB
    - Leverage automation tools like Puppet for making configuration changes. This ensures consistency and reduces the risk of human error.
 
 4. **Gradual Load Testing**
-   - When conducting load testing, consider starting with a lower concurrency level and gradually increasing it. This allows for a more controlled approach to identify optimal server configurations.
+   - When conducting load testing, consider starting with a lower concurrency level and gradually increasing it.
+    This allows for a more controlled approach to identify optimal server configurations.
 
 ## Conclusion
 
-The incident highlighted the importance of fine-tuning system parameters, such as ulimit settings, to ensure the web server can handle varying levels of traffic effectively. By promptly identifying and addressing the root cause, we were able to optimize the Nginx server and improve its performance under pressure. Ongoing monitoring and periodic reviews of server configurations will be essential to maintaining optimal performance as traffic patterns evolve.
+The incident highlighted the importance of fine-tuning system parameters, such as ulimit settings, to ensure the web server can handle varying levels of traffic effectively.
+By promptly identifying and addressing the root cause, we were able to optimize the Nginx server and improve its performance under pressure.
+Ongoing monitoring and periodic reviews of server configurations will be essential to maintaining optimal performance as traffic patterns evolve.
 ```
