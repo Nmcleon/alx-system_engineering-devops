@@ -5,15 +5,17 @@
 
 ## Incident Summary
 
-During a web stack debugging task, we observed a significant number of failed requests while testing the performance of our web server setup featuring Nginx under pressure. The initial benchmark using ApacheBench (ab) revealed 943 failed requests out of 2000, prompting investigation and remediation.
+During a web stack debugging task, I observed a significant number of failed requests while testing the performance of our web server setup featuring Nginx under pressure.
+The initial benchmark using ApacheBench (ab) revealed 943 failed requests out of 2000, prompting investigation and remediation.
 
 ## Root Cause
 
-The root cause of the failed requests was traced to the default ulimit settings for file descriptors on the Nginx server. The initial ulimit setting was insufficient to handle the concurrency level and load imposed during the ApacheBench test.
+The root cause of the failed requests was traced to the default ulimit settings for file descriptors on the Nginx server.
+The initial ulimit setting was insufficient to handle the concurrency level and load imposed during the ApacheBench test.
 
 ## Incident Timeline
 
-- **0.353 seconds:** Initial benchmarking using ApacheBench completed with 943 failed requests.
+- *0.353 seconds:* Initial benchmarking using ApacheBench completed with 943 failed requests.
   
 - **Puppet Configuration (0-the_sky_is_the_limit_not.pp):**
   - The ulimit settings were increased in the Nginx default configuration file (`/etc/default/nginx`) to a more appropriate value (4096).
