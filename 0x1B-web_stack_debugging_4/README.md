@@ -66,3 +66,70 @@ The number of failed requests dropped to zero, and the server demonstrated incre
 The incident highlighted the importance of fine-tuning system parameters, such as ulimit settings, to ensure the web server can handle varying levels of traffic effectively.
 By promptly identifying and addressing the root cause, I was able to optimize the Nginx server and improve its performance under pressure.
 Ongoing monitoring and periodic reviews of server configurations will be essential to maintaining optimal performance as traffic patterns evolve.
+
+
+# 1. User limit
+## advanced
+
+# Postmortem: Resolving User Holberton Login Errors
+
+## Incident Summary
+
+User Holberton experienced login errors, encountering "Too many open files" messages while trying to open files. The issue was identified as a result of reaching the file limits for the user, leading to login failures and errors when interacting with the system.
+
+## Root Cause
+
+The root cause of the login errors for User Holberton was a low file limit set for the user in the OS configuration. The initial ulimit settings were insufficient for Holberton's operations, leading to errors when attempting to log in and open files.
+
+## Incident Timeline
+
+- **Initial Observation:**
+  - Holberton attempts to log in, but errors such as "Too many open files" prevent successful login and file operations.
+
+- **Puppet Configuration (1-user_limit.pp):**
+  - Puppet configuration script (`1-user_limit.pp`) was applied to increase both hard and soft file limits for the Holberton user in `/etc/security/limits.conf`.
+
+- **Verification:**
+  - After applying the Puppet configuration, a successful login was observed for User Holberton, and file operations were performed without encountering "Too many open files" errors.
+
+## Remediation Steps
+
+### 1. Puppet Configuration
+The primary remediation involved adjusting the hard and soft file limits for User Holberton in the `/etc/security/limits.conf` file using Puppet. Both the hard and soft limits were increased to 50,000.
+
+```puppet
+# Fix user Holberton login errors
+
+# Increase hard limit for user holberton
+exec { 'increase-hard-file-limit-for-holberton-user':
+  command => 'sed -i "/holberton hard/s/5/50000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/'
+}
+
+# Increase soft limit for user holberton
+exec { 'increase-soft-file-limit-for-holberton-user':
+  command => 'sed -i "/holberton soft/s/4/50000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/'
+}
+```
+
+### 2. Verification
+Following the application of the Puppet configuration, a successful login for User Holberton was confirmed. Subsequent operations, including file access, were performed without encountering any "Too many open files" errors.
+
+## Lessons Learned
+
+1. **User-Specific Configurations:**
+   - User-specific configurations, such as file limits, should be carefully reviewed and adjusted based on the user's requirements and usage patterns.
+
+2. **Automation for User Configurations:**
+   - Leverage automation tools like Puppet for making user-specific configuration changes. This ensures consistency and reduces the risk of manual errors.
+
+3. **Regular User Testing:**
+   - Periodically test user accounts, especially those with specific requirements, to identify and address potential issues before they impact operations.
+
+4. **Effective Monitoring and Logging:**
+   - Regularly monitor system logs for user-specific errors and implement alerts to detect and address issues promptly.
+
+## Conclusion
+
+By identifying and addressing the low file limits for User Holberton through Puppet automation, we successfully resolved the login errors and file access issues. The incident emphasizes the importance of user-specific configurations and the use of automation tools to maintain consistent and optimized user environments. Ongoing monitoring and periodic reviews of user configurations will be essential for preventing similar issues in the future.
